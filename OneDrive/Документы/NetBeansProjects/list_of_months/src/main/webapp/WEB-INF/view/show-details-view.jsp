@@ -4,8 +4,25 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>CSS Table Border</title>
+    <meta charset="UTF-8"/>
+    <style>
+        .table1  {
+           border: 1px solid red;
+        }
+ 
+        .table1 th {
+           border: 1px solid blue;
+           padding: 5px;
+ 
+        }
+ 
+        .table1 td {
+           border: 1px dashed green;
+           padding: 5px;
+        }
+    </style>
+        
     </head>
     <body>
         <h3>Результаты запроса!</h3>
@@ -14,10 +31,10 @@
         <br>
         
 
-        На Ваш запрос: ${monthNameAttr} было найдено 
+        На Ваш запрос: "${monthNameAttr}" было найдено 
 
         <br><br>
-        <table>
+        <table class="table1">
             <tr>
                 <th>Number</th> 
                 <th>Name of the month</th>                

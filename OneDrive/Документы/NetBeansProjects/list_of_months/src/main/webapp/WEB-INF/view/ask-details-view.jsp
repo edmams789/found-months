@@ -6,7 +6,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Введите слово</h1>
+        <h3>Введите слово</h3>
 
         <br><br>
         <form action="showDetails" method="get">

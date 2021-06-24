@@ -13,13 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class MyController {
     
     @RequestMapping("/")
-    public String showFirstView() {
-        return "first-view";
-    }
-    
-    @RequestMapping("/askDetails")
     public String askEmpDetails() {
-        return "ask-emp-details-view";
+        return "ask-details-view";
     }
     
     @RequestMapping("/showDetails")
@@ -32,38 +27,24 @@ public class MyController {
         
         model.addAttribute("monthNameAttr", monthName);
         model.addAttribute("creatingList", creat);
-        model.addAttribute("findingMatches", find);
+        model.addAttribute("findingMatches", find);    
         
-       
-        
-//        for(Month m : mon) {
-//            System.out.println(m);
-//        }
-        
-//        if (mon.isEmpty()) {
-//            return "show-all-months";
-//        }       
-        
-        return "show-emp-details-view";
+        return "show-details-view";
+    }    
+    
+    @RequestMapping("/addNewMonth")
+    public String addNewMonth() {
+        return "variant";
     }
-    
-    
-    
-    
-    
-    
-//    @RequestMapping("first")
-//    public String showMonth() {
-//        
-//        //@ModelAttribute("monthName") Month month
-//        
-////        creatingList();
-////        
-////        findingMatches(month.getName(), creatingList());
-//        
-//        return "second";
-//    }
-    
+    @RequestMapping("/updateMonth")
+    public String updateMonth() {
+        return "variant";
+    }
+    @RequestMapping("/deleteMonth")
+    public String deleteMonth() {
+        return "variant";
+    }
+
     public List<Month> creatingList() {
         Month month1 = new Month(1, "January");
         Month month2 = new Month(2, "February");
@@ -102,10 +83,8 @@ public class MyController {
         for (Month m : months) {
             if ((m.getName().toLowerCase()).contains(s.toLowerCase())) {
                 foudMonth.add(m);
-//                System.out.println(m.getNumber() + " " + m.getName());
             } 
             if (s == null) {
-//                System.out.println(m.getNumber() + " " + m.getName());
                 return months;
             }
         }

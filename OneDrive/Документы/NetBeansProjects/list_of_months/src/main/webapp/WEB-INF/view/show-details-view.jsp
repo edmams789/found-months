@@ -8,18 +8,18 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Результаты запроса!</h1>
+        <h3>Результаты запроса!</h3>
 
         <br>
         <br>
-        <br>
+        
 
         На Ваш запрос: ${monthNameAttr} было найдено 
 
+        <br><br>
         <table>
             <tr>
-                <th>Number</th>
-            <br>
+                <th>Number</th> 
                 <th>Name of the month</th>                
             </tr>
 
@@ -30,15 +30,18 @@
                     <td> ${month.name}</td>
                     <td>
                         <input type="button" value="Update" 
-                               onclick="window.location.href = '${updateBatton}'"/>
+                               onclick="window.location.href = 'updateMonth'"/>
 
                         <input type="button" value="Delete" 
-                               onclick="window.location.href = '${deleteBatton}'"/>
+                               onclick="window.location.href = 'deleteMonth'"/>
                     </td>
                     </td>
                 </tr>
             </c:forEach>
           
-        </table>        
+        </table>  
+        <br>
+        <input type="button" value="Add"
+               onclick =" window.location.href='addNewMonth'"/>
     </body>
 </html>
